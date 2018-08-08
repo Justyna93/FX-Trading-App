@@ -1,0 +1,32 @@
+<div class="panel" *ngIf="item">
+  <header>
+    <span class="header-currency">{{item.pair}}</span>
+  </header>
+  <div class="content">
+    <div class="sell-box">
+      <div class="sell-header">
+        <span>Sell </span>
+        <span class="sell-currency">{{item.pair.split(' ')[0]}}</span>
+      </div>
+      <span class="currency-value">
+        <span class="smaller-curr-value">{{item.sell | substr:0:4}}</span>
+        <span class="bold-curr-value">{{item.sell | substr:4:6}}</span>
+        <sup class="sup-curr-value">{{item.sell | substr:6}}</sup>
+      </span>
+    </div>
+    <div class="triangle sell-triangle"></div>
+    <div class="indicator" [ngClass]=" (gain === true) ? 'gain' : 'loss'"></div>
+    <div class="buy-box">
+      <div class="buy-header">
+        <span>Buy </span>
+        <span class="buy-currency">{{item.pair.split(' ')[0]}}</span>
+      </div>
+      <span class="currency-value">
+        <span class="smaller-curr-value">{{item.buy | substr:0:4}}</span>
+        <span class="bold-curr-value">{{item.buy | substr:4:6}}</span>
+        <sup class="sup-curr-value">{{item.buy | substr:6}}</sup>
+      </span>
+    </div>
+    <div class="triangle buy-triangle"></div>
+  </div>
+</div>

@@ -1,0 +1,171 @@
+:host {
+	float: left;
+}
+
+.panel {
+	width: 350px;
+	height: 150px;
+	margin: 5px;
+	box-sizing: border-box;
+	border: 1px solid #a3a5a8;
+	display: flex;
+	flex-direction: column;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+	background-color: #2e2f30;
+	height: 20%;
+	position: relative;
+}
+
+.header-currency {
+	display: inline-block;
+	color: #fff;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	top: 25%;
+}
+
+.content {
+	background-color: #e8f3ff;
+	flex: 1;
+	position: relative;
+}
+/* .content.sell-box:hover ~ .sell-triangle,  */
+.sell-box:hover, .sell-box:hover ~ .sell-triangle {
+	background-color: red;
+	border-color: blue;
+	border-width: 2px;
+}
+
+.sell-box:hover .currency-value, .sell-box:hover .sell-header {
+	color: white;
+}
+
+.buy-box:hover, .buy-box:hover ~ .buy-triangle {
+	background-color: #5bff4c;
+	border-color: blue;
+	border-width: 2px;
+}
+
+.buy-box:hover .currency-value, .buy-box:hover .buy-header {
+	color: white;
+}
+
+.sell-box {
+	height: 45%;
+	width: 33%;
+	border: 1px solid #a3a5a8;
+	border-right-style: none;
+	border-radius: 3px 0px 0px 3px;
+	margin-top: 5px;
+	margin-left: 12px;
+	padding: 5px;
+	float: left;
+	position: relative;
+	background-color: #fff;
+	z-index: 2;
+}
+
+.triangle {
+	content: '';
+	width: 46.5px;
+	height: 46.5px;
+	position: absolute;
+	top: 13px;
+	border-radius: 5px 15px;
+	border: 1px solid #a3a5a8;
+	background-color: #fff;
+	transform: rotate(45deg);
+	z-index: 1;
+}
+
+.sell-triangle {
+	left: 113px;
+}
+
+.buy-triangle {
+	right: 113px;
+}
+
+.sell-header {
+	font-weight: bold;
+	display: block;
+	color: #d10a0a;
+	font-size: 0.6em;
+}
+
+.buy-header {
+	font-weight: bold;
+	display: block;
+	color: #406635;
+	font-size: 0.6em;
+	float: right;
+}
+
+.buy-box {
+	height: 45%;
+	width: 33%;
+	border: 1px solid #a3a5a8;
+	border-left-style: none;
+	border-radius: 0px 3px 3px 0px;
+	margin-top: 5px;
+	margin-right: 12px;
+	padding: 5px;
+	float: right;
+	position: relative;
+	background-color: #fff;
+	z-index: 2;
+}
+
+.buy-box .currency-value {
+	float: right;
+	color: #406635;
+	right: 5px;
+	position: absolute;
+	bottom: 0;
+}
+
+.sell-box .currency-value {
+	position: absolute;
+	bottom: 0;
+	left: 5px;
+	color: #d10a0a;
+}
+
+.smaller-curr-value {
+	font-size: 1.7em;
+}
+
+.bold-curr-value {
+	font-weight: bold;
+	font-size: 2.5em;
+}
+
+.sup-curr-value {
+	font-size: 1.7em;
+	position: relative;
+	top: -8px;
+}
+
+.indicator {
+	position: absolute;
+	left: 50%;
+	top: 5px;
+	transform: translateX(-50%);
+	width: 0;
+	height: 0;
+	border-style: solid;
+}
+
+.indicator.loss {
+	border-width: 23px 5px 0 5px;
+	border-color: #b81313 transparent transparent transparent;
+}
+
+.indicator.gain {
+	border-width: 0 5px 23px 5px;
+	border-color: transparent transparent #0f7720 transparent;
+}
